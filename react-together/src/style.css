@@ -1,0 +1,13 @@
+.content-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    max-height: 100%;
+  }
+  
+  .btn-see-more {
+  }
+  
