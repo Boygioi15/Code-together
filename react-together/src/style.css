@@ -1,13 +1,268 @@
-.content-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
+* {
+  box-sizing: border-box;
+}
+
+.createRoom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.roomInputs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+input{
+  font-family: Arial;
+  padding: 5px;
+  border-radius: 5px;
+  width: 400px;
+}
+input:focus{
+  border-color: #1677FF;
+}
+button{
+  padding: 5px;
+  border-radius: 5px;
+  font-size: large;
+  font-family: Arial;
+  color: white;
+  background-color: #1677FF;
+}
+button:focus{
+  background-color: #0958D9;
+}
+h1{
+  font-family: Arial;
+}
+p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  color: red;
+}
+.RoomDisplay{
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  align-self: center;
+}
+.RoomDisplay .screen{
+  height: 100px;
+  position: relative;
+  z-index: -2;
+}
+.RoomDisplay .screen img{ 
+  width: 100%;
+  height: 100px;
+}
+.center-text {
+  position: absolute; 
+  top: 50px; 
+  width: 100%; 
+}
+.RoomSeats{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.RoomSeats .col{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.RoomSeats .row{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.RoomSeats .row-label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+}
+.RoomSeats .seatRow{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.SeatSlot_Empty{
+  position: relative;
+  background-color: rgb(230,230,230);
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  width: 50px;
+  height: 40px;
   
-  .content {
-    max-height: 100%;
-  }
-  
-  .btn-see-more {
-  }
-  
+}
+.SeatSlot_Empty:hover{
+  cursor: pointer;
+  background-color: rgb(210,210,210);
+}
+.SeatSlot_Empty:active{
+  background-color: rgb(190,190,190);
+}
+.SeatSlot_Normal{
+  position: relative;
+  background-color: #7F4CCB;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  width: 50px;
+  height: 40px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.SeatSlot_Normal:hover{
+  cursor: pointer;
+  background-color: #6B38CB;
+}
+.SeatSlot_Normal:active{
+  background-color: #5736B4;
+}
+.SeatSlot_VIP{
+  position: relative;
+  background-color: #ED252E;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  width: 50px;
+  height: 40px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.SeatSlot_VIP:hover{
+  cursor: pointer;
+  background-color: #D9111A;
+}
+.SeatSlot_VIP:active{
+  background-color: #C50006;
+}
+.SeatSlot_Pair{
+  position: relative;
+  background-color: #EC2F99;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  width: 115px;
+  height: 40px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.SeatSlot_Pair:hover{
+  cursor: pointer;
+  background-color: #D81B85;
+}
+.SeatSlot_Pair:active{
+  background-color: #C40771;
+}
+.stickyToolbar {
+  position: fixed;
+  align-self: flex-end;
+  top: 0px; /* Toolbar will "stick" 20px from the top */
+  right: 0px;
+  height: 100vh;
+
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  overflow: visible;
+}
+.stickyToolbar > div:hover{
+  cursor: pointer;
+}
+.stickyToolbar .selectAll{
+  font-size: 36px;
+}
+.stickyToolbar .selected{
+  border-width: 4px;
+  border-color: black;
+  border-style: solid;
+}
+.stickyToolbar .deselectAll{
+  font-size: 36px;
+}
+.stickyToolbar .selectAll:hover{
+  cursor: pointer;
+}
+.stickyToolbar .deselectAll:hover{
+  cursor: pointer;
+}
+.stickyToolbar .deselect{
+  width: 36px;
+  height: 36px;
+  display: block;
+  border-radius: 2px;
+  background-color: rgb(230,230,230);
+  box-sizing: initial;
+}
+.stickyToolbar .selectNormal{
+  width: 36px;
+  height: 36px;
+  display: block;
+  border-radius: 2px;
+  background-color: #7F4CCB;
+  box-sizing: initial;
+}
+.stickyToolbar .selectNormal:hover{
+  background-color: #7542CB;
+}
+.stickyToolbar .selectNormal:active{
+  background-color: #6B38C1;
+}
+
+
+.stickyToolbar .selectVIP{
+  width: 36px;
+  height: 36px;
+  display: block;
+  border-radius: 2px;
+  background-color: #ED252E;
+  box-sizing: initial;
+}
+.stickyToolbar .selectVIP:hover{
+  background-color: #E31B36;
+}
+.stickyToolbar .selectVIP:active{
+  background-color: #D9111A;
+}
+
+
+.stickyToolbar .selectPair{
+  width: 36px;
+  height: 36px;
+  display: block;
+  border-radius: 2px;
+  background-color: #E73194;
+  box-sizing: initial;
+}
+.stickyToolbar .selectPair:hover{
+  background-color: #DD278A;
+}
+.stickyToolbar .selectPair:active{
+  background-color: #D31D80;
+}
+
+.tooltip{
+  overflow: visible;
+  max-width: 200%;
+}
